@@ -1,6 +1,6 @@
 {
   "name": "dsh-agents-viz",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "在 DSH 侧栏注入 Agent Teams 可视化面板：编队 + 任务看板 + 通讯流，提问后自动拆解派发给子 Agent 并实时推进。",
   "type": "module",
   "main": "lib/index.mjs",
@@ -26,7 +26,8 @@
     "client": {
       "inject": [
         "@deepseek-ai/dsh-client-ui-layout",
-        "@deepseek-ai/dsh-client-locale"
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-remotes"
       ],
       "platform": "web"
     }
