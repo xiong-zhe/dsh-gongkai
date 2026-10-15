@@ -1,0 +1,37 @@
+{
+  "name": "dsh-agents-viz",
+  "version": "0.1.0",
+  "description": "在 DSH 侧栏注入 Agent Teams 可视化面板：编队 + 任务看板 + 通讯流，提问后自动拆解派发给子 Agent 并实时推进。",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "files": ["lib", "cordis.patch.yml", "assets"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "build": "tsc --noEmit && tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5-alpha.2",
+    "@deepseek-ai/dsh-client-locale": "0.2.1-alpha.3",
+    "@deepseek-ai/dsh-client-ui-layout": "0.2.1-alpha.3",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.1-alpha.3",
+    "@types/node": "26.2.0",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsdown": "0.22.14",
+    "typescript": "6.0.3"
+  }
+}
